@@ -8,11 +8,11 @@ int c,t=0,y;
 Scanner sc=new Scanner(System.in);
 public void show()
 {
-System.out.println("ENTER NAME OF CUSTOMER");
+System.out.println("ENTER NAME OF CUSTOMER:");
 cn=sc.next();
-System.out.println("ENTER TOTAL ITEMS");
+System.out.println("ENTER TOTAL ITEMS:");
 c=sc.nextInt();
-System.out.println("ENTER TOTAL PRICE");
+System.out.println("ENTER TOTAL PRICE:");
 t=sc.nextInt();
 for(y=1;y<=c;y++)
 {
