@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script>
+            function load()
+            {
+                var b=document.getElementById("t1").value;
+                var h=new XMLHttpRequest();
+               
+                h.onreadystatechange=function()
+                {
+                    if(this.readyState==4 && this.status==200)
+                    {
+                        
+                        document.getElementById("abc").innerHTML=this.responseText;
+                    }
+                     
+                };
+              
+                h.open("GET","fetch_data.jsp?v1="+b,true);    
+                h.send();         
+    }
+        </script>
+       </head>
+    <body>
+        <center><h1>FETCHING RECORDS USING AJAX</h1></center>
+        <div id="abc">
+            <input type="text" name="t3" id="t1"/>
+            <button type="button" id="b1" onclick="load()">FETCH RECORDS</button>
+        </div>
+    </body>
+</html>
