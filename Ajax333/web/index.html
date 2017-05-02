@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function load()
+        {
+         
+            var h=new XMLHttpRequest();
+            h.onreadystatechange=function()
+            {
+                if(this.readyState==4 && this.status==200)
+                    
+            {
+            document.getElementById("res").value=this.responseText;
+            }
+        };
+        
+            var var1=document.getElementById("b1").value;
+            var var2=document.getElementById("b2").value;
+           
+            
+            h.open("GET","data.jsp?v1="+var1+"&v2="+var2,true);    
+        
+        h.send();
+        }
+    </script>
+    </head>
+    <body>
+        <h1>AJAX EXAMPLE</h1>
+        
+        First Value:<input name="i1" type="text" id="b1">
+        Second Value:<input name="i2" type="text" id="b2">
+     <button type="button" onclick="load()">button</button>
+        <div id="he">
+         Result Value:<input name="i3" type="text" id="res">  
+        </div>
+        
+    </body>
+</html>
